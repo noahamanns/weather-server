@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config();
 
+console.log('API_KEY loaded:', process.env.API_KEY ? 'yes' : 'no');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
