@@ -15,7 +15,7 @@ app.get ('/api/weather', async (req, res) => {
 
     try {
         const response = await fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${city}&days=7`
+            `https://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${city}&days=7`
         );
 
         if (!response.ok) {
