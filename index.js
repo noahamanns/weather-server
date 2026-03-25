@@ -2,8 +2,6 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config();
 
-console.log('API_KEY loaded:', process.env.API_KEY ? 'yes' : 'no');
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -12,6 +10,8 @@ app.use(express.json())
 
 app.get ('/api/weather', async (req, res) => {
     const { city } = req.query;
+
+console.log('Fetching weather for:', city, 'API_KEY present:', !!process.env.API_KEY);
 
     try {
         const response = await fetch(
